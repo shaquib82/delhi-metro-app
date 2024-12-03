@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Metro App</title>
+
+    <!-- Google Fonts - Roboto -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Reset body margin and padding */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #f0f0f0; /* Light gray background for the entire page */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Ensure the body takes up the full height of the page */
+        }
+
+        /* Header with deep blue background color */
+        header {
+            background-color: #003366; /* Deep blue background color for the header */
+            color: white;
+            height: 300px; /* Set the height of the header portion */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 20px; /* Spacing from the edges */
+            box-sizing: border-box; /* Ensure padding is included in the width calculation */
+        }
+
+        /* Heading inside the header */
+        header h1 {
+            font-family: 'Roboto', sans-serif; /* Apply Roboto font */
+            font-size: 3rem; /* Larger font for the main heading */
+            margin: 0;
+            font-weight: 700; /* Bold weight */
+        }
+
+        /* Subheading inside the header */
+        header p {
+            font-family: 'Roboto', sans-serif; /* Apply Roboto font */
+            font-size: 1.5rem; /* Slightly smaller subheading text */
+            margin: 10px 0;
+        }
+
+        /* Main content section below the header */
+        .main-content {
+            flex: 1; /* Allow the content to grow and push the footer down */
+            padding: 30px;
+        }
+
+        h2 {
+            font-family: 'Roboto', sans-serif; /* Apply Roboto font */
+            font-size: 2.5rem;
+            color: #003366; /* Deep blue text for the heading */
+        }
+
+        .btn {
+            padding: 15px 30px;
+            background-color: #004080; /* Deep blue for buttons */
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            margin: 10px;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #003366; /* Darker blue for button hover effect */
+        }
+
+        footer {
+            background-color: #222222; /* Dark gray footer */
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header section with the welcoming message -->
+<header>
+    <div>
+        <h1>Welcome to Delhi Metro</h1>
+    </div>
+</header>
+
+<!-- Main content below the header -->
+<div class="main-content">
+    <h2>What would you like to do?</h2>
+    <a href="/stations" class="btn">List All Stations</a>
+    <a href="/metro-map" class="btn">View Metro Map</a>
+    <a href="/plan-route" class="btn">Plan a Route</a>
+    <a href="/fares" class="btn">Check Fares</a>
+</div>
+
+<!-- Footer section -->
+<footer>
+    © 2024 Delhi Metro App | All Rights Reserved
+</footer>
+
+</body>
+</html>

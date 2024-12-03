@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <!-- Google Fonts - Roboto -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+
+    <title>Station List</title>
+    <style>
+        /* Custom styles */
+        body {
+            background-color: #f8f9fa; /* Light gray background */
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: #003366; /* Deep blue */
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Apply Roboto font to header */
+        header h1 {
+            font-family: 'Roboto', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700; /* Bold weight */
+            margin: 0;
+        }
+
+        table {
+            background-color: white; /* White background for table */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for table */
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        table thead {
+            background-color: #003366; /* Deep blue header */
+            color: white;
+        }
+
+        .btn-custom {
+            background-color: #003366;
+            color: white;
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-custom:hover {
+            background-color: #002244; /* Slightly darker blue on hover */
+        }
+
+        footer {
+            background-color: #222;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Station List</h1>
+</header>
+
+<div class="container my-4">
+    <!-- Table of stations -->
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+            <thead>
+            <tr>
+                <th scope="col">Station Name</th>
+                <th scope="col">Line(s)</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="station : ${stations}">
+                <td th:text="${station.name}">Example Station</td>
+                <td>
+                  <span th:each="color, iterStat : ${station.colors}">
+                    <span th:text="${color.color}"></span><span th:if="${not iterStat.last}">, </span>
+                  </span>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<footer>
+    © 2024 Delhi Metro App | All Rights Reserved
+</footer>
+
+<!-- Bootstrap JS and optional Popper.js -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybBogGzqFC5bQmJ6bZ7jI24d4msD2BmZBf52v6eQRRr6up9l+" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IQsoLXlHj3aHbX1fI1tPH7KaH3D/o9GyT1kaZlKjAY+qlAn1+91BIQTof7tI7sm" crossorigin="anonymous"></script>
+</body>
+</html>

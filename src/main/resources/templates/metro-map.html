@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Metro Map</title>
+
+    <!-- Google Fonts - Roboto -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Reset body margin and padding */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9; /* Light gray background */
+            text-align: center;
+        }
+
+        /* Header styling */
+        header {
+            background-color: #003366; /* Deep blue */
+            color: white;
+            padding: 20px;
+        }
+
+        /* Apply Roboto font to header h1 */
+        header h1 {
+            font-family: 'Roboto', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700; /* Bold weight */
+            margin: 0;
+        }
+
+        /* Content container */
+        .container {
+            padding: 20px;
+        }
+
+        /* Metro map image styling */
+        .metro-map {
+            margin: 20px auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for the map */
+            border: 5px solid #003366; /* Border matching the header color */
+            max-width: 90%; /* Adjust image width for responsiveness */
+        }
+
+        /* Message text */
+        .message {
+            font-size: 1.2rem;
+            color: #555; /* Neutral color for the message */
+            margin-bottom: 20px;
+        }
+
+        footer {
+            background-color: #222;
+            color: white;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+<!-- Header Section -->
+<header>
+    <h1>Metro Map</h1>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+    <!-- Optionally display a message -->
+    <p class="message" th:text="${message}">Here is the interactive metro map for your convenience!</p>
+
+    <!-- Metro Map Image -->
+    <img class="metro-map" th:src="@{/metro_map.png}" alt="Metro Map" />
+</div>
+
+<!-- Footer Section -->
+<footer>
+    © 2024 Delhi Metro App | All Rights Reserved
+</footer>
+</body>
+</html>
